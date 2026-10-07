@@ -57,6 +57,24 @@
   .gate-status.err{color:var(--red)}
   .gate-box.shake{animation:gateShake .4s ease}
   @keyframes gateShake{0%,100%{transform:translateX(0)}20%{transform:translateX(-8px)}40%{transform:translateX(8px)}60%{transform:translateX(-6px)}80%{transform:translateX(6px)}}
+  .gate-hint{
+    font-size:.62rem;color:var(--dim);letter-spacing:.25em;
+    text-align:center;margin-top:24px;padding-top:18px;
+    border-top:1px dashed rgba(0,240,255,.18);position:relative;
+  }
+  .gate-hint::before{
+    content:'◢';position:absolute;top:-9px;left:50%;transform:translateX(-50%);
+    background:rgba(0,10,20,.9);color:var(--cyan);font-size:.7rem;padding:0 8px;letter-spacing:0;
+  }
+  .gate-hint .hint-cipher{
+    color:var(--cyan);letter-spacing:.35em;font-weight:700;
+    text-shadow:0 0 12px var(--cyan);font-size:.82rem;margin-left:4px;
+    font-family:'JetBrains Mono',monospace;
+  }
+  .gate-hint .hint-note{
+    display:block;margin-top:8px;font-size:.54rem;letter-spacing:.22em;
+    opacity:.55;color:var(--dim);text-transform:lowercase;
+  }
 
   /* ============= INTRO ============= */
   #boot{position:fixed;inset:0;z-index:99990;background:#000;transition:opacity 1.2s ease,visibility 1.2s;overflow:hidden;display:none}
@@ -402,6 +420,10 @@
       <span class="gate-caret" id="gateCaret" style="left:70px">|</span>
     </div>
     <div class="gate-status" id="gateStatus">▸ Ожидание ввода...</div>
+    <div class="gate-hint">
+      HINT · <span class="hint-cipher">тиояпиыин</span>
+      <span class="hint-note">шифр цезаря · сдвиг +3</span>
+    </div>
   </div>
 </div>
 
@@ -474,15 +496,15 @@
       7 дизайнов, 28 моделей, 5 интро, голосовое управление и дружеский чат — в одном приложении.
     </p>
     <div class="hero-btns">
-      <a href="https://github.com/PythonExeCoder/Jarvis/releases/latest/download/JARVIS.exe" class="btn btn-primary magnetic">
-        <span>⬇ Скачать JARVIS.exe</span>
+      <a href="https://github.com/PythonExeCoder/JarvisPRO/releases/latest/download/JarvisPRO.exe" class="btn btn-primary magnetic">
+        <span>⬇ Скачать JarvisPRO.exe</span>
       </a>
-      <a href="https://github.com/PythonExeCoder/Jarvis" target="_blank" class="btn btn-ghost magnetic">
+      <a href="https://github.com/PythonExeCoder/JarvisPRO" target="_blank" class="btn btn-ghost magnetic">
         <span>◆ Исходники</span>
       </a>
     </div>
     <div class="hero-pills">
-      <div class="pill"><span class="n">105</span> МБ</div>
+      <div class="pill"><span class="n">115</span> МБ</div>
       <div class="pill"><span class="n">Windows</span> 10/11</div>
       <div class="pill"><span class="n">Free</span> · MIT</div>
       <div class="pill"><span class="n">Python</span> 3.12</div>
@@ -700,7 +722,7 @@
     <div class="faq reveal">
       <div class="faq-item">
         <div class="faq-q">Как установить JARVIS?</div>
-        <div class="faq-a"><div class="faq-a-inner">Скачай <span class="hi">JARVIS.exe</span> с GitHub Releases и запусти. Установка не требуется — всё в одном файле. Работает на Windows 10/11 x64. Требуется микрофон и интернет для распознавания речи.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">Скачай <span class="hi">JarvisPRO.exe</span> с GitHub Releases и запусти. Установка не требуется — всё в одном файле. Работает на Windows 10/11 x64. Требуется микрофон и интернет для распознавания речи.</div></div>
       </div>
       <div class="faq-item">
         <div class="faq-q">Почему антивирус ругается?</div>
@@ -730,16 +752,16 @@
   <div class="container">
     <div class="download-box reveal">
       <h3>Готов к <span class="c">запуску</span>?</h3>
-      <p>Скачай готовый JARVIS.exe — без установки, без зависимостей, без конфигураций.</p>
+      <p>Скачай готовый JarvisPRO.exe — без установки, без зависимостей, без конфигураций.</p>
       <div class="download-meta">
-        <div>Размер: <span>~105 МБ</span></div>
+        <div>Размер: <span>~115 МБ</span></div>
         <div>Версия: <span>v4.0.0</span></div>
         <div>Windows: <span>10 / 11</span></div>
         <div>Лицензия: <span>MIT</span></div>
       </div>
       <div class="download-btns">
-        <a href="https://github.com/PythonExeCoder/Jarvis/releases/latest/download/JARVIS.exe" class="btn btn-primary magnetic"><span>⬇ Скачать JARVIS.exe</span></a>
-        <a href="https://github.com/PythonExeCoder/Jarvis/releases/latest" target="_blank" class="btn btn-ghost magnetic"><span>Все релизы</span></a>
+        <a href="https://github.com/PythonExeCoder/JarvisPRO/releases/latest/download/JarvisPRO.exe" class="btn btn-primary magnetic"><span>⬇ Скачать JarvisPRO.exe</span></a>
+        <a href="https://github.com/PythonExeCoder/JarvisPRO/releases/latest" target="_blank" class="btn btn-ghost magnetic"><span>Все релизы</span></a>
       </div>
     </div>
   </div>
@@ -755,7 +777,7 @@
       <div class="step reveal">
         <div class="step-num">01</div>
         <h3>Скачай</h3>
-        <p>JARVIS.exe с GitHub. Один файл, без установки. Работает на любом Windows 10/11 x64.</p>
+        <p>JarvisPRO.exe с GitHub. Один файл, без установки. Работает на любом Windows 10/11 x64.</p>
       </div>
       <div class="step reveal">
         <div class="step-num">02</div>
@@ -788,10 +810,10 @@
           <div class="tg-user" id="tgUser">@IPlayWithYourFeelings</div>
           <div class="tg-cta"><span>Написать</span><span class="arr">→</span></div>
         </a>
-        <a href="https://github.com/PythonExeCoder/Jarvis" target="_blank" class="tg-card gh-card tilt">
+        <a href="https://github.com/PythonExeCoder/JarvisPRO" target="_blank" class="tg-card gh-card tilt">
           <div class="tg-head">
             <div class="tg-ico">◆</div>
-            <div><div class="tg-lbl">GitHub</div><div class="tg-name">PythonExeCoder/Jarvis</div></div>
+            <div><div class="tg-lbl">GitHub</div><div class="tg-name">PythonExeCoder/JarvisPRO</div></div>
           </div>
           <div class="tg-user">v4.0 · Latest release</div>
           <div class="tg-cta"><span>Открыть репозиторий</span><span class="arr">→</span></div>
@@ -804,11 +826,11 @@
 <footer>
   <div class="logo"><span class="logo-core"></span>JARVIS</div>
   <div class="links">
-    <a href="https://github.com/PythonExeCoder/Jarvis" target="_blank">GitHub</a>
+    <a href="https://github.com/PythonExeCoder/JarvisPRO" target="_blank">GitHub</a>
     <span class="sep">·</span>
-    <a href="https://github.com/PythonExeCoder/Jarvis/releases/latest" target="_blank">Releases</a>
+    <a href="https://github.com/PythonExeCoder/JarvisPRO/releases/latest" target="_blank">Releases</a>
     <span class="sep">·</span>
-    <a href="https://github.com/PythonExeCoder/Jarvis/issues" target="_blank">Issues</a>
+    <a href="https://github.com/PythonExeCoder/JarvisPRO/issues" target="_blank">Issues</a>
     <span class="sep">·</span>
     <a href="https://t.me/IPlayWithYourFeelings" target="_blank">Telegram</a>
   </div>
